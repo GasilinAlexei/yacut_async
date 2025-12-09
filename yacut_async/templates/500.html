@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block title %}Ошибка 500 — Внутренняя ошибка сервера{% endblock %}
+
+{% block content %}
+<section class="container text-center mt-5">
+  <h1 class="display-4 text-danger">500</h1>
+  <p class="lead">Что-то пошло не так на сервере 😬</p>
+  <p>Мы уже разбираемся. А пока вы можете вернуться на <a href="{{ url_for('index') }}">главную страницу</a>.</p>
+</section>
+{% endblock %}

@@ -1,0 +1,11 @@
+version: "3.9"
+
+services:
+  web:
+    image: deadcandance/yacut_async_backend:latest
+    container_name: yacut_async_web
+    restart: always
+    env_file:
+      - .env
+    ports:
+      - "5000:5000"

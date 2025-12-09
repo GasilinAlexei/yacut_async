@@ -3,7 +3,7 @@ from http import HTTPStatus
 
 import pytest
 
-from yacut.models import URLMap
+from yacut_async.models import URLMap
 
 PY_URL = 'https://www.python.org'
 CUSTOM_ID = 'py'

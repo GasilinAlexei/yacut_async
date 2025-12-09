@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block title %}
+  Главная — YaCut
+{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+  <h1 class="mb-4">Укорачивайте ссылки с YaCut</h1>
+
+  {% with messages = get_flashed_messages() %}
+    {% if messages %}
+      {% for message in messages %}
+        <div class="alert alert-danger" role="alert">{{ message }}</div>
+      {% endfor %}
+    {% endif %}
+  {% endwith %}
+
+  {% if short_link %}
+    <div class="alert alert-info" role="alert">
+      Ваша короткая ссылка:
+      <a href="{{ short_link }}">{{ short_link }}</a>
+    </div>
+  {% endif %}
+
+  <form method="POST">
+    {{ form.csrf_token }}
+
+    <div class="form-group">
+      {{ form.original_link.label(class="form-label") }}
+      {{ form.original_link(class="form-control") }}
+      {% if form.original_link.errors %}
+        <div class="text-danger">{{ form.original_link.errors[0] }}</div>
+      {% endif %}
+    </div>
+
+    <div class="form-group">
+      {{ form.custom_id.label(class="form-label") }}
+      {{ form.custom_id(class="form-control") }}
+      {% if form.custom_id.errors %}
+        <div class="text-danger">{{ form.custom_id.errors[0] }}</div>
+      {% endif %}
+    </div>
+
+    <button class="btn btn-primary mt-3" type="submit">Создать</button>
+  </form>
+</div>
+{% endblock %}
