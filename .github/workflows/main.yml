@@ -74,4 +74,6 @@ jobs:
           message: |
             🚀 Деплой успешно выполнен!
             Репозиторий: ${{ github.repository }}
+            Ссылка на репозиторий: https://github.com/${{ github.repository }}
             Коммит: ${{ github.sha }}
+            Ссылка на коммит: https://github.com/${{ github.repository }}/commit/${{ github.sha }}
