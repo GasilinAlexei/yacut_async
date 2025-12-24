@@ -59,7 +59,7 @@ GET /api/id/<id>/ # получить оригинальную ссылку
 ### 1. Клонирование репозитория
 
 ```bash
-git clone https://github.com/<username>/yacut_async.git
+git clone git@github.com:GasilinAlexei/yacut_async.git
 cd yacut_async
 ```
 ### 2. Создание виртуального окружения
